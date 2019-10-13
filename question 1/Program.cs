@@ -32,13 +32,31 @@ namespace question_1
             FinnHarps.Addresult(Result.Lose);
             FinnHarps.Addresult(Result.Lose);
             FinnHarps.Addresult(Result.Draw);
+            GalwayUnited.Addresult(Result.Win);
+            GalwayUnited.Addresult(Result.Win);
+            GalwayUnited.Addresult(Result.Win);
+            GalwayUnited.Addresult(Result.Win);
 
 
             Display(teams);
 
+            teams.Sort();
+            teams.Reverse();
+
+            Display(teams);
+
+            SligoRovers.Players.Add(new players() { name = "ph 1", position = "goalkeeper" });
+            SligoRovers.Players.Add(new players() { name = "ph 2", position = "defender" });
+            SligoRovers.Players.Add(new players() { name = "ph 3", position = "midfield" });
+            
+            Console.WriteLine("\nSligo Rovers TeamSheet");
+            foreach (players players in SligoRovers.Players)
+            {
+                Console.WriteLine($"{players.name} {players.position}");
+            }
 
 
-        
+
         }
         
         static void Display(List<Team> teams)

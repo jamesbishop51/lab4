@@ -13,7 +13,7 @@ namespace question_1
         Lose
 
     }
-    class Team
+    public class Team : IComparable
     {
 
         public string Teams { get; private set; }
@@ -36,9 +36,13 @@ namespace question_1
                 return points;
             }
         }
+
+        public List<players> Players {get; set;}
+
         public Team(string name)
         {
             Teams = name;
+            Players = new List<players>();
         }
 
 
@@ -68,6 +72,12 @@ namespace question_1
             }
         }
 
+        public int CompareTo(object obj)
+        {
+            Team that = (Team)obj;
+
+            return this.Points.CompareTo(that.points);
+        }
     }
     
 }
